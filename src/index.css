@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #f8f1e7;
+  --bg-soft: #fffaf3;
+  --ink-900: #2a2823;
+  --ink-700: #4d4a43;
+  --ink-500: #79756d;
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-border: rgba(255, 255, 255, 0.9);
+  --card: #fffdf8;
+  --card-border: #efe4d5;
+  --teal-600: #177c74;
+  --teal-500: #249688;
+  --teal-100: #d5f3ec;
+  --amber-500: #e68555;
+  --amber-100: #ffe9dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--ink-900);
+  background-color: var(--bg-base);
+  background-image: radial-gradient(
+      circle at 15% 15%,
+      rgba(255, 183, 129, 0.42) 0%,
+      rgba(255, 183, 129, 0) 34%
+    ),
+    radial-gradient(
+      circle at 90% 12%,
+      rgba(83, 194, 178, 0.3) 0%,
+      rgba(83, 194, 178, 0) 35%
+    ),
+    radial-gradient(
+      circle at 80% 88%,
+      rgba(255, 220, 168, 0.38) 0%,
+      rgba(255, 220, 168, 0) 32%
+    ),
+    linear-gradient(160deg, var(--bg-base) 0%, var(--bg-soft) 100%);
+}
+
+.font-title {
+  font-family: "Fraunces", "Georgia", serif;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatDrift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-rise-in {
+  animation: riseIn 520ms cubic-bezier(0.2, 0.7, 0.15, 1) both;
+}
+
+.animate-delay-1 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-2 {
+  animation-delay: 180ms;
+}
+
+.animate-delay-3 {
+  animation-delay: 260ms;
+}
+
+.animate-float {
+  animation: floatDrift 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise-in,
+  .animate-float {
+    animation: none;
+  }
+}
