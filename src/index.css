@@ -82,6 +82,30 @@ body {
   }
 }
 
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    background-color: rgba(42, 40, 35, 0);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+    background-color: rgba(42, 40, 35, 0.4);
+  }
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
 .animate-rise-in {
   animation: riseIn 520ms cubic-bezier(0.2, 0.7, 0.15, 1) both;
 }
@@ -102,9 +126,19 @@ body {
   animation: floatDrift 9s ease-in-out infinite;
 }
 
+.animate-modal-backdrop {
+  animation: modalFadeIn 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-content {
+  animation: modalScaleIn 380ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-rise-in,
-  .animate-float {
+  .animate-float,
+  .animate-modal-backdrop,
+  .animate-modal-content {
     animation: none;
   }
 }

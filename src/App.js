@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import { Toaster, toast } from "sonner";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -24,20 +25,26 @@ function App() {
   const editTodo = (id, newText) => {
     setTodos((currentTodos) =>
       currentTodos.map((todo) =>
-        todo.id === id ? { ...todo, text: newText } : todo
-      )
+        todo.id === id ? { ...todo, text: newText } : todo,
+      ),
     );
+  };
+
+  const showMessage = () => {
+    toast.success("Task deleted successfully");
+    console.log("Task deleted successfully");
   };
 
   const deleteTodo = (id) => {
     setTodos((currentTodos) => currentTodos.filter((todo) => todo.id !== id));
+    showMessage();
   };
 
   const toggleTodo = (id) => {
     setTodos((currentTodos) =>
       currentTodos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
     );
   };
 
