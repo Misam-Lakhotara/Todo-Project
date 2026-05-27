@@ -1,4 +1,4 @@
-function Header({ totalTasks, completedTasks }) {
+export default function Header({ totalTasks, completedTasks }) {
   const completionRate = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
 
   return (
@@ -55,5 +55,3 @@ function Header({ totalTasks, completedTasks }) {
     </header>
   );
 }
-
-export default Header;

@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { FiCheckCircle } from "react-icons/fi";
 
-function TodoForm({ onAddTodo }) {
+export default function TodoForm({ onAddTodo }) {
   const [todoText, setTodoText] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const trimmedText = todoText.trim();
 
     if (!trimmedText) {
@@ -51,5 +50,3 @@ function TodoForm({ onAddTodo }) {
     </form>
   );
 }
-
-export default TodoForm;

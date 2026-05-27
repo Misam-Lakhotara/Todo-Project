@@ -7,7 +7,7 @@ export default defineConfig({
       name: "load-js-files-as-jsx",
       enforce: "pre",
       async transform(code, id) {
-        if (!/src\/.*\.js$/.test(id)) {
+        if (!/src\/.*\.(js|jsx)$/.test(id)) {
           return null;
         }
 
@@ -18,17 +18,18 @@ export default defineConfig({
       },
     },
     react({
-      include: "**/*.js",
+      include: "**/*.{js,jsx}",
     }),
   ],
   esbuild: {
-    include: /src\/.*\.js$/,
+    include: /src\/.*\.(js|jsx)$/,
     loader: "jsx",
   },
   optimizeDeps: {
     esbuildOptions: {
       loader: {
         ".js": "jsx",
+        ".jsx": "jsx",
       },
     },
   },

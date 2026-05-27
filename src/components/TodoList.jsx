@@ -1,7 +1,7 @@
 import { FiCheckCircle } from "react-icons/fi";
 import TodoItem from "./TodoItem";
 
-function TodoList({ todos, onToggleTodo, onEditTodo, onDeleteTodo }) {
+export default function TodoList({ todos, onToggleTodo, onEditTodo, onDeleteTodo }) {
   if (todos.length === 0) {
     return (
       <div className="animate-rise-in animate-delay-2 rounded-3xl border border-dashed border-[#dcc8af] bg-[#fff9f1] px-6 py-12 text-center">
@@ -31,5 +31,3 @@ function TodoList({ todos, onToggleTodo, onEditTodo, onDeleteTodo }) {
     </ul>
   );
 }
-
-export default TodoList;
