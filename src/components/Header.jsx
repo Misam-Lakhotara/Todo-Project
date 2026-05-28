@@ -1,5 +1,6 @@
 export default function Header({ totalTasks, completedTasks }) {
-  const completionRate = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
+  const completionRate =
+    totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
 
   return (
     <header className="mb-8 animate-rise-in">
@@ -12,8 +13,8 @@ export default function Header({ totalTasks, completedTasks }) {
             Plan your day with clarity
           </h1>
           <p className="mt-3 text-sm leading-6 text-[var(--ink-700)] sm:text-base">
-            Capture tasks quickly, update them in one click, and track progress in real
-            time.
+            Capture tasks quickly, update them in one click, and track progress
+            in real time.
           </p>
         </div>
 
@@ -22,7 +23,9 @@ export default function Header({ totalTasks, completedTasks }) {
             <p className="text-xs font-bold uppercase tracking-[0.15em] text-[var(--ink-500)]">
               Today&apos;s progress
             </p>
-            <p className="text-sm font-black text-[var(--teal-600)]">{completionRate}%</p>
+            <p className="text-sm font-black text-[var(--teal-600)]">
+              {completionRate}%
+            </p>
           </div>
 
           <div className="mt-3 h-2.5 rounded-full bg-[#f2e5d6]">
@@ -46,7 +49,9 @@ export default function Header({ totalTasks, completedTasks }) {
           </p>
         </div>
         <div className="rounded-2xl border border-[#cfeae4] bg-[var(--teal-100)] p-4 text-center shadow-sm">
-          <p className="text-2xl font-black text-[var(--teal-600)]">{completedTasks}</p>
+          <p className="text-2xl font-black text-[var(--teal-600)]">
+            {completedTasks}
+          </p>
           <p className="text-xs font-bold uppercase tracking-wide text-[var(--ink-500)]">
             Done
           </p>

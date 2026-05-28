@@ -20,7 +20,10 @@ export default function TodoForm({ onAddTodo }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-7 animate-rise-in animate-delay-1">
+    <form
+      onSubmit={handleSubmit}
+      className="mb-7 animate-rise-in animate-delay-1"
+    >
       <div className="flex flex-col gap-3 sm:flex-row">
         <input
           type="text"
@@ -31,6 +34,7 @@ export default function TodoForm({ onAddTodo }) {
           }}
           placeholder="What do you want to finish today?"
           className="min-h-14 flex-1 rounded-2xl border border-[var(--card-border)] bg-[var(--card)] px-5 text-base font-semibold text-[var(--ink-900)] shadow-sm outline-none transition duration-300 placeholder:text-[var(--ink-500)] focus:border-[var(--teal-500)] focus:ring-4 focus:ring-[#d2f3ed]"
+          autoFocus
         />
 
         <button
